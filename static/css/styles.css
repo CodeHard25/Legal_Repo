@@ -1,0 +1,118 @@
+/* General styling for the body and container */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 2;
+  padding: 2;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Styling the list of acts */
+ul.acts-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.acts-list li {
+  background-color: #fff;
+  margin: 8px 0;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+ul.acts-list li:hover {
+  background-color: #f1f1f1;
+}
+
+ul.acts-list li a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+ul.acts-list li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .container {
+      width: 90%;
+  }
+  ul.acts-list li {
+      font-size: 14px;
+  }
+}
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f8f9fa;
+  color: #495057;
+  text-align: left;
+  position: sticky;
+  top: 0;  /* This will make the header sticky */
+  z-index: 1;  /* Ensures the header stays above the content */
+  box-shadow: 0 2px 2px -2px gray; 
+}
+
+table tr:hover {
+  background-color: #fffdfd;
+}
+
+/* Styling the search/filter section */
+#filter-section {
+  margin-bottom: 20px;
+}
+
+#filter-section input {
+  padding: 8px;
+  margin: 5px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  table th, table td {
+      font-size: 14px;
+      padding: 10px;
+  }
+
+  #filter-section input {
+      width: 100%;
+  }
+}

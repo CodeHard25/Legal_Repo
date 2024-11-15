@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ act_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1> {{ act_name }}</h1>
+    
+    <form id="filter-section" method="POST" action="{{ url_for('filter_sections') }}">
+        <input type="hidden" name="act_name" value="{{ act_name }}">
+        <label for="section_filter">Filter Section:</label>
+        <input type="text" name="section_filter" id="section_filter">
+        <button type="submit">Apply Filter</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>Section</th>
+            <th>Description</th>
+        </tr>
+        {% for section in sections %}
+            <tr>
+                <td>{{ section[0] }}</td>
+                <td>{{ section[1] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    {% if filter_applied %}
+        <p>Filter applied!</p>
+    {% endif %}
+    
+    <div><a href="{{ url_for('index') }}">Back to Act List</a></div>
+    <div><a href="{{ url_for('login') }}" class="btn btn-dark">Logout</a></div>
+</body>
+</html>
